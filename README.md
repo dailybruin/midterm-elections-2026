@@ -1,6 +1,6 @@
-## Flat Page Starter Template in React
+## Midterm Elections Flatpage
 
-This repository is a template for building flat pages in React. It provides a basic structure with common scripts to help you get started quickly.
+This repository is a flat page for the 2026 midterm elections.
 
 ## Available Scripts
 
