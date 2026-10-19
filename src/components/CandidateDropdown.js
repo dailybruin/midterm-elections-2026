@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components'
 
+import chevron from '../images/Chevron.png'
+
 
 const Option = styled.div`
 	background-color: white;
@@ -11,19 +13,32 @@ const Option = styled.div`
     border: 2px solid;
     border-color: #000000;
     text-align: center;
+
+
+
 	h1 {
 		margin: 0;
 		font-family: Inter, sans-serif; 
         font-size: 24px;
         weight: 500;
+        style: medium;
 	}
+
+    img{
+        flex: 0 1 20px;
+        text-align: left;
+        style: regular;
+        aspect-ratio: 2/1;
+    }
+
+    transition: flex-grow 0.4s ease, max-height 0.4s ease;
 `
 const Container = styled.div`
 	background-color: white;
     border: 2px solid #000000;
     border-radius: 8px;
     height: 369px;
-    width: 515px;
+    width: 515px; /*515*/
     text-align: center;
 	h1 {
 		margin: 0;
@@ -31,24 +46,48 @@ const Container = styled.div`
         font-size: 24px;
         weight: 500;
 	}
-    h2 {
+    h3 {
 		margin: 0;
 		font-family: Inter, sans-serif; 
         font-size: 14px;
         weight: 400;
+        color: #17171C
+        optical-size: 0;
 	}
 `
 
+const Dropdown = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .picture{
+        flex: 0 1 115px;
+        aspect-ratio: 146/115;
+    }
+    
+    .description{
+        flex: 0 1 348px;
+        text-align: left;
+        style: regular;
+    }
+`
+
 export default function CandidateDropdown({name, description, picture}){
+    
+    const [showDropdown, setShowDropdown] = useState(false);
+
     return(
         <Container>
-            <Option>
+            <Option onClick={() => setShowDropdown(prev => !prev)}>
                 <h1>{name}</h1>
+                <img src = {chevron}/>
             </Option>
-            <div>
-                <h2>{description}</h2>
-                <h2>{picture}</h2>
-            </div>
+            {showDropdown && 
+            <Dropdown>
+                <div className="picture"><img src={picture}/></div>
+                <div className="description"><h3>{description}</h3></div>
+            </Dropdown>}
         </Container>
     );
 }
