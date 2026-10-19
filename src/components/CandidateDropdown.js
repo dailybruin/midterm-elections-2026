@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components'
 
 import chevron from '../images/Chevron.png'
+import { renderToReadableStream } from "react-dom/server";
 
 
 const Option = styled.div`
 	background-color: white;
 	color: black;
     height: 53px;
-    width: 515px;
+    width: 100%;
     border-radius: 8px;
     box-sizing: border-box;
     text-align: center;
@@ -16,13 +17,16 @@ const Option = styled.div`
     padding: 12px 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;        
+    align-items: center;
+    
+    cursor: pointer;
 
 	h1 {
 		margin: 0;
 		font-family: Inter, sans-serif; 
         font-size: 24px;
         font-weight: 500;
+        color: #17171C;
 	}
 
     /*chevron*/
@@ -37,43 +41,59 @@ const Container = styled.div`
 	background-color: white;
     border: 2px solid #000000;
     border-radius: 8px;
-    height: 369px;
-    width: 515px; /*515*/
+    /*height: 369px;*/
+    width: 515px;
     text-align: center;
-	h1 {
-		margin: 0;
-		font-family: Inter, sans-serif; 
-        font-size: 24px;
-        weight: 500;
-	}
-    h3 {
-		margin: 0;
-		font-family: Inter, sans-serif; 
-        font-size: 14px;
-        weight: 400;
-        color: #17171C
-        optical-size: 0;
-	}
-`
+    box-sizing: border-box;
+    overflow: hidden
+    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+`;
 
 const Dropdown = styled.div`
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    gap: 20px; 
+    padding: 16px 16px 20px 16px;
+    align-items: flex-start;
 
     .picture{
-        flex: 0 1 115px;
-        aspect-ratio: 146/115;
-        border: 2px solid #000000;
-        /*width: 348px;*/
+        flex: 0 0 115px;
+        aspect-ratio: 115/146;
+
+        border: 2px solid #000000; /* TODO: DELETE LATER */
     }
-    
-    .description{
-        flex: 0 1 348px;
+
+    .description{  
+        flex: 1 1 0%; /*take up remaining space*/
+        min-width: 0;
+        max-width: 348px;
+        width: fit-content;
+        box-sizing: border-box;
+    }
+
+    h3{
+        margin: 0;
+		font-family: Inter, sans-serif; 
+        font-size: 14px;
+        font-weight: 400;
+        font-style: regular;
+        color: #17171C;
         text-align: left;
-        style: regular;
     }
-`
+`;
+
+const DropdownWrapper = styled.div`
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-rows: ${props => props.$isOpen ? '1fr' : '0fr'};
+  transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+const DropdownContent = styled.div`
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+`;
 
 export default function CandidateDropdown({name, description, picture}){
     
@@ -83,13 +103,17 @@ export default function CandidateDropdown({name, description, picture}){
         <Container>
             <Option onClick={() => setShowDropdown(prev => !prev)}>
                 <h1>{name}</h1>
-                <img src = {chevron}/>
+                <img src = {chevron} style={{transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)'}}/>
             </Option>
-            {showDropdown && 
-            <Dropdown>
-                <div className="picture"><img src={picture}/></div>
-                <div className="description"><h3>{description}</h3></div>
-            </Dropdown>}
+
+            <DropdownWrapper $isOpen={showDropdown}>
+                <DropdownContent> 
+                    <Dropdown>
+                        <div className="picture"><img src={picture}/></div>
+                        <div className="description"><h3>{description}</h3></div>
+                    </Dropdown>
+                </DropdownContent>
+            </DropdownWrapper>
         </Container>
     );
 }
