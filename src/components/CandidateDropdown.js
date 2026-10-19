@@ -10,28 +10,28 @@ const Option = styled.div`
     height: 53px;
     width: 515px;
     border-radius: 8px;
-    border: 2px solid;
-    border-color: #000000;
+    box-sizing: border-box;
     text-align: center;
 
-
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;        
 
 	h1 {
 		margin: 0;
 		font-family: Inter, sans-serif; 
         font-size: 24px;
-        weight: 500;
-        style: medium;
+        font-weight: 500;
 	}
 
+    /*chevron*/
     img{
-        flex: 0 1 20px;
-        text-align: left;
-        style: regular;
+        width: 20px;
         aspect-ratio: 2/1;
+        object-fit: contain;
     }
 
-    transition: flex-grow 0.4s ease, max-height 0.4s ease;
 `
 const Container = styled.div`
 	background-color: white;
@@ -64,6 +64,8 @@ const Dropdown = styled.div`
     .picture{
         flex: 0 1 115px;
         aspect-ratio: 146/115;
+        border: 2px solid #000000;
+        /*width: 348px;*/
     }
     
     .description{

@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Header/>
       Hello Daily Bruin!
-      <CandidateDropdown name = "Xaiver" description = {desProps} picture = "src/images/DailyBruinLogo.svg"/>
+      <CandidateDropdown name = "Xaiver Becerra" description = {desProps} picture = "src/images/DailyBruinLogo.svg"/>
       <Footer/>
     </div>
   );
