@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import {useState} from "react";
 import styled from 'styled-components'
 
 import chevron from '../images/Chevron.png'
-import frame from '../images/Frame.png'
 
 const Container = styled.div`
 	background-color: white;
     border: 2px solid #000000;
     border-radius: 8px;
-    max-height: 369px;
-    width: 515px;
+    max-width: 515px;
     text-align: center;
     box-sizing: border-box;
     overflow: hidden
@@ -50,6 +48,20 @@ const Option = styled.div`
 
 `
 
+const DropdownWrapper = styled.div`
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-rows: ${props => props.$isOpen ? '1fr' : '0fr'};
+  transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+const DropdownContent = styled.div`
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
 const Dropdown = styled.div`
     display: flex;
     gap: 20px; 
@@ -83,21 +95,7 @@ const Dropdown = styled.div`
     }
 `;
 
-const DropdownWrapper = styled.div`
-  display: grid;
-  width: 100%;
-  box-sizing: border-box;
-  grid-template-rows: ${props => props.$isOpen ? '1fr' : '0fr'};
-  transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-`;
-
-const DropdownContent = styled.div`
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
-`;
-
-export default function CandidateDropdown({name, description, picture}){
+export default function CandidateDropdown({name, description, picture, alt}){
     
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -111,7 +109,7 @@ export default function CandidateDropdown({name, description, picture}){
             <DropdownWrapper $isOpen={showDropdown}>
                 <DropdownContent> 
                     <Dropdown>
-                        <div className="picture"><img src={picture}/></div>
+                        <div className="picture"><img src={picture} alt = {alt}/></div>
                         <div className="description"><h3>{description}</h3></div>
                     </Dropdown>
                 </DropdownContent>
