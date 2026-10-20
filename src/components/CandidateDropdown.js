@@ -103,7 +103,9 @@ export default function CandidateDropdown({name, description, picture, alt}){
         <Container>
             <Option onClick={() => setShowDropdown(prev => !prev)}>
                 <h1>{name}</h1>
-                <img src = {chevron} style={{transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)'}}/>
+                <img src = {chevron} 
+                alt = {showDropdown ? "a downwards black chevron arrow to expand dropdown" : "an upwards black chevron arrow to collapse dropdown"} 
+                style={{transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)'}}/>
             </Option>
 
             <DropdownWrapper $isOpen={showDropdown}>
