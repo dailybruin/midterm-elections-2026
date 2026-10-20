@@ -23,7 +23,7 @@ function App() {
 		.then(res => setData(res.data['article.aml']))
   }, [])
  
-  return (
+  return data && (
     <div className="App">
       <Header/>
       Hello Daily Bruin!
