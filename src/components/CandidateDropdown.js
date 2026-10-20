@@ -2,8 +2,19 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components'
 
 import chevron from '../images/Chevron.png'
-import { renderToReadableStream } from "react-dom/server";
+import frame from '../images/Frame.png'
 
+const Container = styled.div`
+	background-color: white;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    max-height: 369px;
+    width: 515px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden
+    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+`;
 
 const Option = styled.div`
 	background-color: white;
@@ -26,6 +37,7 @@ const Option = styled.div`
 		font-family: Inter, sans-serif; 
         font-size: 24px;
         font-weight: 500;
+        font-style: medium;
         color: #17171C;
 	}
 
@@ -37,17 +49,6 @@ const Option = styled.div`
     }
 
 `
-const Container = styled.div`
-	background-color: white;
-    border: 2px solid #000000;
-    border-radius: 8px;
-    /*height: 369px;*/
-    width: 515px;
-    text-align: center;
-    box-sizing: border-box;
-    overflow: hidden
-    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-`;
 
 const Dropdown = styled.div`
     display: flex;
@@ -59,7 +60,7 @@ const Dropdown = styled.div`
         flex: 0 0 115px;
         aspect-ratio: 115/146;
 
-        border: 2px solid #000000; /* TODO: DELETE LATER */
+        border: 2px solid #000000; /* TODO: DELETE LATER, just showing the picture outline */
     }
 
     .description{  
@@ -78,6 +79,7 @@ const Dropdown = styled.div`
         font-style: regular;
         color: #17171C;
         text-align: left;
+        line-height: 20px;
     }
 `;
 
