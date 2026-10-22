@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Landing from './pages/Landing' ;
 import CandidateDropdown from "./components/CandidateDropdown";
 
 import frame from './images/Frame.png'
@@ -15,6 +16,7 @@ const props = [
 ];
 
 function App() {
+  /*
   const [ data, setData ] = useState(null);
   
   useEffect(() => {
@@ -22,19 +24,12 @@ function App() {
 		.then(res => res.json())
 		.then(res => setData(res.data['article.aml']))
   }, [])
- 
-  return data && (
+
+  return data && ( */
+  return (
     <div className="App">
       <Header/>
-      Hello Daily Bruin!
-      <div style = {{height: 500}}>
-        <CandidateDropdown 
-          name = {props[0].name} 
-          description = {props[0].description} 
-          picture = {frame}
-          alt = {props[0].alt}
-        />
-      </div>
+      <Landing/>
       <Footer/>
     </div>
   );
