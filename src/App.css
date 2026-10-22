@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200;300;400;700&display=swap');
 
 .App {
-  text-align: center;
+  min-height: 100vh;
+  min-height: 100dvh;     
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {

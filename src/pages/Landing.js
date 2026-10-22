@@ -1,5 +1,6 @@
-
 import React from "react";
+import { Link } from "react-router-dom";
+import { categories } from "../data/categories";
 import "./Landing.css";
 
 function Landing() {
@@ -13,10 +14,7 @@ function Landing() {
             numOctaves="3"
             seed="8"
           />
-          <feDisplacementMap
-            in="SourceGraphic"
-            scale="2"
-          />
+          <feDisplacementMap in="SourceGraphic" scale="2" />
         </filter>
       </svg>
 
@@ -39,16 +37,15 @@ function Landing() {
         </div>
 
         <div className="Button-grid">
-          <h3 className="Button ink-text bigger-text">Governor</h3>
-          <h3 className="Button ink-text bigger-text">Mayor</h3>
-          <h3 className="Button ink-text smaller-text">State Assembly</h3>
-          <h3 className="Button ink-text bigger-text">State Senate</h3>
-          <h3 className="Button ink-text smaller-text">
-            State Ballot Measures
-          </h3>
-          <h3 className="Button ink-text smaller-text">
-            Local Ballot Measures
-          </h3>
+          {categories.map((c) => (
+            <Link
+              key={c.slug}
+              to={`/${c.slug}`}
+              className="Button-link"
+            >
+              <h3 className={`Button ink-text ${c.size}`}>{c.title}</h3>
+            </Link>
+          ))}
         </div>
       </div>
     </>

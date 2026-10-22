@@ -9,35 +9,42 @@ import { mediaQueries } from '../shared/config';
 
 
 const Container = styled.div`
-	background-color: black;
-	height: auto;
-	color: white;
-	padding: 60px 0 10px 0;
-    text-align: center;
-	h1 {
-		margin: 0;
-		font-family: 'Times New Roman', Times, serif;
+  background-color: black;
+  height: auto;
+  color: white;
+  padding: 24px 0 28px 0;
+  text-align: center;
+  margin-top: auto;   /* pushes the footer to the bottom */
+
+  h1 {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
-	}
-  /* margin-bottom: 20px; */
+  }
 `
 
 const Socials = styled.div`
-    position: relative;
-	margin-top: 20px;
-  
-	img {
+  position: relative;
+  margin-top: 12px;       
 
+  img {
     position: relative;
-		margin: 0 20px;
-	}
-	p {
+    margin: 0 20px;
+    display: block;       
+  }
+
+  a {
+    display: inline-block;   
+  }
+
+  p {
     position: relative;
-		margin: 80px 20px;
-		${mediaQueries.mobile} {
-			margin: 50px 20px;
-		}
-	}
+    margin: 16px 20px 0;   
+    font-size: 14px;
+    ${mediaQueries.mobile} {
+      margin: 12px 20px 0;  
+    }
+  }
 `
 
 const Footer = () => {
