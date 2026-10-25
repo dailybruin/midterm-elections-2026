@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { categories } from "../data/categories";
+import { useData } from "../DataContext";
 import "./Landing.css";
 
 function Landing() {
@@ -38,15 +39,12 @@ function Landing() {
 
         <div className="Button-grid">
           {categories.map((c) => (
-            <Link
-              key={c.slug}
-              to={`/${c.slug}`}
-              className="Button-link"
-            >
-              <h3 className={`Button ink-text ${c.size}`}>{c.title}</h3>
+            <Link key={c.slug} to={`/${c.slug}`} className="Button-link">
+              <h3 className={`Button ink-text ${c.size ?? ""}`}>{c.title}</h3>
             </Link>
           ))}
         </div>
+        
       </div>
     </>
   );
