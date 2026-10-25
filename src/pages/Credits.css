@@ -1,0 +1,109 @@
+@import url('https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/fonts/CalSans-SemiBold.css');
+
+.team-credits {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-credits-page {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.team-group {
+  margin-bottom: 2.5rem;
+}
+
+.team-group__title {
+  font-family: 'Cal Sans', sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0 0 2rem;
+  color: #111;
+}
+
+.team-grid {
+  display: inline-grid;
+  row-gap: 25px;
+  column-gap: 40px;
+  grid-template-columns: repeat(2, fit-content(100%));
+  justify-content: center;
+  align-items: center;
+}
+
+.team-grid > .team-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.team-card {
+  border: 2px solid #0c0c0c;
+  border-radius: 12px;
+  padding: 10px 18px;
+  width: 400px;
+  height: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+}
+
+.team-card__name {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  margin: 0 0 3px;
+}
+
+.team-card__position {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .team-credits {
+    padding: 1.25rem 1rem 1.5rem;
+    gap: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .team-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: calc(100% - 2rem);
+    max-width: 320px;
+    margin: 0;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 100%;
+    height: 80px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+}

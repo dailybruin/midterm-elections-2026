@@ -5,6 +5,7 @@ import chevron from '../images/Chevron.png'
 
 const Container = styled.div`
 	background-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
     border: 2px solid #000000;
     border-radius: 8px;
     max-width: 515px;
@@ -32,7 +33,7 @@ const Option = styled.div`
 
 	h1 {
 		margin: 0;
-		font-family: Inter, sans-serif; 
+		font-family: inherit; 
         font-size: 24px;
         font-weight: 500;
         font-style: medium;
@@ -85,7 +86,7 @@ const Dropdown = styled.div`
 
     h3{
         margin: 0;
-		font-family: Inter, sans-serif; 
+		font-family: inherit; 
         font-size: 14px;
         font-weight: 400;
         font-style: regular;
@@ -111,8 +112,12 @@ export default function CandidateDropdown({name, description, picture, alt}){
             <DropdownWrapper $isOpen={showDropdown}>
                 <DropdownContent> 
                     <Dropdown>
-                        <div className="picture"><img src={picture} alt = {alt}/></div>
+                    {picture && (
+                        <div className="picture"><img src={picture} alt={alt} /></div>
+                    )}
+                    {description && (
                         <div className="description"><h3>{description}</h3></div>
+                    )}
                     </Dropdown>
                 </DropdownContent>
             </DropdownWrapper>

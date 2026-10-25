@@ -1,0 +1,47 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  border-bottom: 2px solid #000;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 0;
+  padding: 12px 20px;
+  list-style: none;
+  overflow-x: auto;          /* scrolls sideways on phones instead of wrapping */
+  white-space: nowrap;
+}
+
+.nav-link {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  border-bottom-color: #111;
+}
+
+#about {
+  scroll-margin-top: 60px;   /* keeps the credits heading clear of the sticky nav */
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
