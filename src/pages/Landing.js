@@ -24,16 +24,12 @@ function Landing() {
           <div className="Heading">
             <h1 className="ink-text">Ballot Breakdown</h1>
             <h2 className="ink-text">
-              What to know before the 2026 Midterm Elections
+              What to know before the 2026 midterm elections
             </h2>
           </div>
 
           <p className="Description">
-            From the governor’s race to local ballot measures, this year’s
-            midterm elections will shape California and Los Angeles for years
-            to come. The Daily Bruin breaks down the candidates and measures
-            on the ballot so you know what to expect before you vote. Select
-            a race below to learn more.
+            Westwood residents will vote on several races, 14 statewide ballot measures and 10 local ballot measures in the 2026 midterm elections. The Daily Bruin previews a Westwood voter’s ballot ahead of Election Day on Nov. 3. Select a button below to learn more.
           </p>
         </div>
 

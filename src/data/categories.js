@@ -39,8 +39,8 @@ export const categories = [
     title: "State Senate",
     introKey: "state_senate_description",
     candidates: [
-      { id: "erickson", name: "Erickson" }, // full names once confirmed
-      { id: "goldsmith", name: "Goldsmith" },
+      { id: "erickson", name: "John Erickson" }, // full names once confirmed
+      { id: "goldsmith", name: "Brian Goldsmith" },
     ],
   },
   {

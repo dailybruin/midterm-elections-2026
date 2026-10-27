@@ -5,8 +5,8 @@ import { useData } from "../DataContext";
 const GROUPS = [
   { key: "reporter_credits", label: "Reporters" },
   { key: "developer_credits", label: "Developers" },
-  { key: "designers_credit", label: "Designers" },       
-  { key: "illustrators_credit", label: "Illustrators" }, 
+  { key: "designer_credits", label: "Designer" },
+  { key: "illustrator_credits", label: "Illustrator" },
 ];
 
 const WORD_TO_NUM = {

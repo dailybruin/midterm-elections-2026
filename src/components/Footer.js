@@ -58,6 +58,7 @@ const Footer = () => {
           <a href="https://www.tiktok.com/@dailybruin" target="_blank" rel="noreferrer"><img src={tiktok} alt=""/></a>
           <a href="http://eepurl.com/cFEiZX" target="_blank" rel="noreferrer"><img src={email} alt=""/></a>
         </Socials>
+        <p> Reporting by Amanda Velasco, Alexis Muchnik and Julian Duaybis. Built by Shayla Kumaresan, Sri Sharma and Jessica Yep. Designed by Patrick Wu. Illustrated by Lauren Trautenberg.</p>
     </Container>
     )
   }

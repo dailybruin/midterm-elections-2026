@@ -18,13 +18,25 @@
   margin-bottom: 2.5rem;
 }
 
+.team-credits-page__title {
+font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 300;
+  margin: 2rem 0 2rem;
+  color: #111;
+  filter: url(#ink-bleed);
+}
+
+/* matches the category page titles */
 .team-group__title {
-  font-family: 'Cal Sans', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 200;
   margin: 0 0 2rem;
   color: #111;
+  filter: url(#ink-bleed);
 }
 
 .team-grid {
@@ -62,14 +74,17 @@
   font-weight: 400;
   color: black;
   margin: 0 0 3px;
+  filter: url(#ink-bleed);
 }
 
+/* matches the dropdown names on the category pages */
 .team-card__position {
-  font-family: 'Cal Sans', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: black;
+  color: #17171C;
   margin: 0;
+  filter: url(#ink-light);
 }
 
 /* Mobile */
